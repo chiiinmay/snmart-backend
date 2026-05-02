@@ -18,6 +18,7 @@ const paymentRoutes = require('./routes/payment');
 const aiRoutes = require('./routes/ai');
 const analyticsRoutes = require('./routes/analytics');
 const uploadRoutes = require('./routes/upload');
+const reviewRoutes = require('./routes/reviews');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -58,6 +59,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/reviews', reviewRoutes);
 app.use('/api/upload', uploadRoutes);
 
 app.get('/api/health', (req, res) => {
