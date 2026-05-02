@@ -27,9 +27,9 @@ exports.createPaymentOrder = async (req, res) => {
 // @route   POST /api/payment/verify
 exports.verifyPaymentSignature = async (req, res) => {
   try {
-    const { orderId, paymentId, signature } = req.body;
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
-    const isValid = verifyPayment(orderId, paymentId, signature);
+    const isValid = verifyPayment(razorpay_order_id, razorpay_payment_id, razorpay_signature);
 
     if (isValid) {
       res.json({
